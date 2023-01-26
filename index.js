@@ -28,12 +28,14 @@ app.get("/api/hello", function (req, res) {
 
 
 app.get('/api/:date?', (req, res) => {
-  console.log(req.params.date);
+
   if (!req.params.date) {
+
     return res.json({
       unix: Number(new Date()),
       utc: new Date().toUTCString()
     })
+
   }
 
   let date;
